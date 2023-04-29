@@ -1,0 +1,70 @@
+@font-face {
+    font-family: PokemonHollow;
+    src: url(/assets/PokemonHollow.ttf);
+}
+
+@font-face {
+    font-family: PokemonSolid;
+    src: url(/assets/PokemonSolid.ttf);
+}
+
+@font-face {
+    font-family: Pixel;
+    src: url(/assets//PublicPixel-z84yD.ttf);
+}
+
+@font-face {
+    font-family: PokemonPixel;
+    src: url(/assets/pokemon_pixel_font.ttf);
+}
+
+.list-card-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 2vh 0.5vw;
+    border-radius: 20px;
+    width: 12vw;
+    /* height: 100%; */
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    max-height: 40vh;
+    transition: 0.5s ease;
+}
+
+.list-card-container p{
+    font-family: PokemonPixel;
+    font-size: max(1.5vw, 17px);
+}
+
+.list-card-detail {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+}
+
+.list-card-detail img{
+    width: 100%;
+    height: 100%;
+}
+
+.list-card-detail button{
+
+    font-family: PokemonPixel;
+    font-size: max(1.2vw, 10px);
+    text-align: center; 
+}
+
+@media screen and (max-width: 600px){
+    .list-card-container{
+        width: 25vw;
+        max-height: 35vh;
+    }
+
+}
+
+

@@ -1,0 +1,113 @@
+@font-face {
+    font-family: PokemonHollow;
+    src: url(/assets/PokemonHollow.ttf);
+}
+
+@font-face {
+    font-family: PokemonSolid;
+    src: url(/assets/PokemonSolid.ttf);
+}
+
+@font-face {
+    font-family: Pixel;
+    src: url(/assets//PublicPixel-z84yD.ttf);
+}
+
+@font-face {
+    font-family: PokemonPixel;
+    src: url(/assets/pokemon_pixel_font.ttf);
+}
+
+
+.card-container {
+    display: flex;
+    width: 60vw;
+    flex-direction: column;
+    margin-bottom: 10vh;
+    padding: 4vh 2vw;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 12px;    
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    transition-duration: .5s;
+}
+    
+
+.card-container h2{
+    font-family: PokemonPixel;
+    font-size: max(2.5vw, 18px);
+    color: whitesmoke;
+}
+
+
+.card-container img{
+    height: auto;
+    width: 40%;
+}
+
+.card-detail{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.card-detail h1{
+    font-family: PokemonPixel;
+    font-size: max(4vw, 40px);
+    color: whitesmoke;
+}
+
+.pokemon-types{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vw;
+    margin-bottom: 7vh;
+}
+
+.pokemon-types img{
+    width: 20%;
+    height: auto;
+}
+
+.pokemon-moves{
+    display: grid;
+    background-color: #25292e;
+    padding: 1.5vw;
+    gap: 0.5vh 0.5vw;
+    text-align: start;
+    grid-template-columns: auto auto auto auto auto;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.pokemon-moves p{
+
+    font-family: PokemonPixel;
+    font-size: 2vw;
+    color: #00C5FF;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px){
+    
+    .card-container img{
+        width: 80%;
+    }
+    .pokemon-types img{
+        width: 40%;
+    }
+    .card-container {
+        margin-bottom: 15vh;
+        width: 70vw;
+    }
+
+    .pokemon-moves{
+        padding: 1rem;
+    }
+}
+
+
