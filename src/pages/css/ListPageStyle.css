@@ -58,5 +58,6 @@
 @media screen and (max-width: 600px){
     .grid-container{
         grid-template-columns: auto auto auto;
+        gap: 4vw;
     }
 }

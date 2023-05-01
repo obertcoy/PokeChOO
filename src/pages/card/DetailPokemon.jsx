@@ -17,16 +17,80 @@ import iceType from "../../icon/IceIC_PE.png"
 import dragonType from "../../icon/DragonIC_PE.png"
 import darkType from "../../icon/DarkIC_PE.png"
 import fairyType from "../../icon/FairyIC_PE.png"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { ThemeContext } from "../ThemeContext"
+import { GetEvolutionChain, GetPokemonDetail } from "../query/PokemonQuery"
+import { useQuery } from "@apollo/client"
+
+// function GetEvolutionChainImg({pokemonName}){
+//     const queryVariable = {
+//         name: pokemonName
+//     }
+
+//     const {data, loading, error} = useQuery(GetPokemonDetail, {
+//         variables: queryVariable,
+//     });
+    
+//     if(loading){
+//         return <div className="loader"></div>;
+
+//     } else if(error){
+//         return <h1>{error.message}</h1>
+//     }
+
+//     return (
+//         <img src={data.pokemon.sprites.front_default} alt=""></img>
+//     )
+// }
+
+// function EvolutionChain({pokemonID}){
+    
+//     const queryVariable = {
+//         id: String(parseInt(pokemonID) + 3)
+//     }
+
+//     const {data, loading, error} = useQuery(GetEvolutionChain, {
+//         variables: queryVariable,
+//     });
+
+
+    
+//     if(loading){
+//         return <div className="loader"></div>;
+        
+//     } else if(error){
+//         return <h1>{error.message}</h1>
+//     }
+
+//     const evo_2 = data.evolutionChain.response.chain.evolves_to[0].species.name
+//     const evo_3 = data.evolutionChain.response.chain.evolves_to[0].evolves_to[0].species.name
+    
+//     console.log(evo_2);
+
+//     return (
+//         <div className="evolution-chain">
+//             <h2>Evolution Chain</h2>
+//             <div className="evolution-chain-img">
+
+//                 <GetEvolutionChainImg pokemonName={data.evolutionChain.response.chain.species.name} />
+
+//                 {evo_2 ? (<GetEvolutionChainImg pokemonName={evo_2} />) : null}
+//                 {evo_3 ? (<GetEvolutionChainImg pokemonName={evo_3} />) : null}
+
+//             </div>
+//         </div>
+//     )
+
+// }
+
 
 export function DetailPokemonCard({result}){
 
     const theme = useContext(ThemeContext);
 
+
     if(!result.pokemon.name){
-        console.log(result.name);
-        return null;
+        return <h5 style={{color: "whitesmoke", fontFamily: "PokemonPixel"}}>Pokemon not found...</h5>;
     }
 
     return (
@@ -60,12 +124,23 @@ export function DetailPokemonCard({result}){
                         return null;
                     })}
                 </div>
+                <div className='height-weight'>
+
+                    <p style={{color: theme.font_color}}>Height: {result.pokemon.height / 10} m</p>
+                    <p style={{color: theme.font_color}}>Weight: {result.pokemon.weight / 10} kg</p>
+                </div>
                 <h2 style={{color: theme.font_color}}>Moves</h2>
                 <div className="pokemon-moves" style={{background: theme.card_move_background}}>
                     {result.pokemon.moves.map(moves => {
                         return <p style={{color: theme.font_move_color}}>{moves.move.name}</p>
                     })}
                 </div>
+                <div className="shiny-img" style={{background: theme.card_move_background}}>
+
+                    <h2 style={{color: "#FFDF00"}}>Shiny</h2>
+                    <img src={result.pokemon.sprites.front_shiny} alt=""></img>
+                </div>
+                {/* <EvolutionChain pokemonID={String(result.pokemon.id)}/> */}
             </div>
         </div>
     )

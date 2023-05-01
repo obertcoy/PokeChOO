@@ -4,6 +4,7 @@ import { DetailPokemonCard } from "./card/DetailPokemon";
 import { GetPokemonDetail } from "./query/PokemonQuery";
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
+import LoadingScreen from "./Loading";
 
 function DetailPage(){
     
@@ -11,7 +12,6 @@ function DetailPage(){
 
     let {pokemonName} = useParams();
   
-
     const queryVariable = {
         name: pokemonName
     }
@@ -21,7 +21,7 @@ function DetailPage(){
     });
 
     if(loading){
-        return "Loading...";
+        return <LoadingScreen/>;
     } else if(error){
         return <h1>{error.message}</h1>
     }

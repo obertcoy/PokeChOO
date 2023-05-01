@@ -10,9 +10,16 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import { ThemeContext, THEME } from './pages/ThemeContext';
 import { useState } from 'react';
 import FooterBar from './pages/Footer';
+import { GetEvolutionID } from './pages/query/PokemonQuery';
 
 const client = new ApolloClient({
   uri: "https://graphql-pokeapi.graphcdn.app/",
+  cache: new InMemoryCache()
+});
+
+// On Progress
+const client2 = new ApolloClient({
+  uri: "https://beta.pokeapi.co/graphql/v1beta",
   cache: new InMemoryCache()
 });
 

@@ -36,7 +36,7 @@
 
 .card-container h2{
     font-family: PokemonPixel;
-    font-size: max(2.5vw, 18px);
+    font-size: max(2.8vw, 25px);
     color: whitesmoke;
 }
 
@@ -59,13 +59,30 @@
     color: whitesmoke;
 }
 
+.height-weight{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: PokemonPixel;
+    margin-bottom: 3vh;
+}
+
+.height-weight p{
+    font-style: oblique;
+    font-size: max(2vw, 20px);
+    margin: 0;
+}
+
+
 .pokemon-types{
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 2vw;
-    margin-bottom: 7vh;
+    margin: 3vh 0 5vh 0;
 }
 
 .pokemon-types img{
@@ -82,7 +99,7 @@
     grid-template-columns: auto auto auto auto auto;
     border-radius: 25px;
     text-align: center;
-}
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 
 .pokemon-moves p{
 
@@ -92,16 +109,33 @@
     font-weight: bold;
 }
 
+.shiny-img{
+
+    display: flex;
+    margin-top: 5vh;
+    padding: 3vh 0 5vh 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.shiny-img img{
+
+    padding: 1vh;
+}
+
+
 @media screen and (max-width: 600px){
     
     .card-container img{
-        width: 80%;
+        width: 100%;
     }
     .pokemon-types img{
         width: 40%;
     }
-    .card-container {
-        margin-bottom: 15vh;
+    .card-container{
         width: 70vw;
     }
 

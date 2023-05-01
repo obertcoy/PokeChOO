@@ -22,6 +22,7 @@ export const GetPokemonDetail = gql`
       weight
       sprites {
         front_default
+        front_shiny
       }
       moves {
         move {
@@ -35,4 +36,27 @@ export const GetPokemonDetail = gql`
       }
     }
   }
+`
+export const GetEvolutionChain = gql`
+  query GetEvolutionChain($id: String!) {
+    evolutionChain(id: $id) {
+      params
+      status
+      message
+      response
+    }
+  }
+`
+
+export const GetEvolutionID = gql`
+  query samplePokeAPIquery {
+    data: pokemon_v2_pokemonspecies(order_by: {id: asc, pokemon_v2_evolutionchain: {id: asc}}) {
+    name
+    id
+    pokemon_v2_evolutionchain {
+      id
+    }
+  }
+}
+
 `

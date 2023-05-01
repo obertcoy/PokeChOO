@@ -15,7 +15,7 @@ function FavoritePokemonGrid ({pokemon, removeFavorite}){
     const {data, loading, error} = useQuery(GetPokemonDetail, {
         variables: queryVariable,
     });
-
+    
     if(loading){
         return <div className="loader"></div>;
 
