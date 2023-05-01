@@ -54,7 +54,9 @@ export default function FavoritePage(){
         )
     } else {
         return (
-            <h1>No Data...</h1>
+            <div className="page-container" style={{background: theme.page_background}}>
+                <h1 style={{color: "whitesmoke", fontFamily:"PokemonPixel"}}>No Data...</h1>
+            </div>
         )
     }
 
